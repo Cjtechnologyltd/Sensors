@@ -20,5 +20,34 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+	private void OnAccelClicked(object sender, EventArgs e)
+	{
+        if (Accelerometer.Default.IsSupported)
+        {
+            if (!Accelerometer.Default.IsMonitoring)
+            {
+                // Turn on accelerometer
+                Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
+                Accelerometer.Default.Start(SensorSpeed.UI);
+            }
+            else
+            {
+                // Turn off accelerometer
+                Accelerometer.Default.Stop();
+                Accelerometer.Default.ReadingChanged -= Accelerometer_ReadingChanged;
+                AccelLabel.Text = $"Disabled";
+            }
+        }
+        else
+        {
+            AccelLabel.Text = $"Unsupported";
+        }
+    }
+
+    private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+	{
+        AccelLabel.Text = $"Accel: {e.Reading}";
+    }
 }
 

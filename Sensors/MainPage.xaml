@@ -16,6 +16,30 @@
                 HorizontalOptions="Center" />
 
             <Label
+                Text="Accelerometer"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                />
+            <Button
+                x:Name="AccelBtn"
+                Text="Toggle Accelerometer"
+                Clicked="OnAccelClicked"
+                HorizontalOptions="Start"
+                
+                />
+
+            <Label
+                x:Name="AccelLabel"
+                Text="Disabled"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                />
+
+
+            <Label
                 Text="Hello, World!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
