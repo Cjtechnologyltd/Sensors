@@ -16,7 +16,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Acceleration"
+                Text="Accelerometer"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="Header"
                 HorizontalOptions="Start"
