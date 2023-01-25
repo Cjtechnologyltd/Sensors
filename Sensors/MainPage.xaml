@@ -18,7 +18,8 @@
             <Label
                 Text="Accelerometer"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="Header"
+                FontSize="Large"
+                FontAttributes="Bold"
                 HorizontalOptions="Start"
                 />
             <Button
