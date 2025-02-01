@@ -84,6 +84,29 @@
                 HorizontalOptions="Start"
                 />
 
+            <Label
+                Text="Orientation"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                />
+
+            <Button
+                x:Name="OrientBtn"
+                Text="Toggle Orientation"
+                Clicked="ToggleOrientation"
+                HorizontalOptions="Start"
+                />
+
+            <Label
+                x:Name="OrientationLabel"
+                Text="Disabled"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                />
+
 
             <Label
                 Text="Hello, World!"

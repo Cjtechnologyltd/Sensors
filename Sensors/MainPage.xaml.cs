@@ -2,27 +2,27 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    int count = 0;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        if (count == 1)
+            CounterBtn.Text = $"Clicked {count} time";
+        else
+            CounterBtn.Text = $"Clicked {count} times";
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        SemanticScreenReader.Announce(CounterBtn.Text);
+    }
 
-	private void OnAccelClicked(object sender, EventArgs e)
-	{
+    private void OnAccelClicked(object sender, EventArgs e)
+    {
         if (Accelerometer.Default.IsSupported)
         {
             if (!Accelerometer.Default.IsMonitoring)
@@ -46,7 +46,7 @@ public partial class MainPage : ContentPage
     }
 
     private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
-	{
+    {
         AccelLabel.Text = $"Accel: {e.Reading}";
     }
 
@@ -99,5 +99,31 @@ public partial class MainPage : ContentPage
         MagnetometerLabel.TextColor = Colors.Green;
         MagnetometerLabel.Text = $"Magnetometer: {e.Reading}";
     }
-}
 
+    private void ToggleOrientation(object sender, EventArgs e)
+    {
+        if (OrientationSensor.Default.IsSupported)
+        {
+            if (!OrientationSensor.Default.IsMonitoring)
+            {
+                // Turn on orientation
+                OrientationSensor.Default.ReadingChanged += Orientation_ReadingChanged;
+                OrientationSensor.Default.Start(SensorSpeed.UI);
+            }
+            else
+            {
+                // Turn off orientation
+                OrientationSensor.Default.Stop();
+                OrientationSensor.Default.ReadingChanged -= Orientation_ReadingChanged;
+            }
+        }
+    }
+
+    private void Orientation_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
+    {
+        // Update UI Label with orientation state
+        OrientationLabel.TextColor = Colors.Green;
+        OrientationLabel.Text = $"Orientation: {e.Reading}";
+
+    }
+}
