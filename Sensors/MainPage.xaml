@@ -38,6 +38,52 @@
                 HorizontalOptions="Start"
                 />
 
+            <Label
+                Text="Gyroscope"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                />
+
+            <Button
+                x:Name="GyroBtn"
+                Text="Toggle Gyro"
+                Clicked="ToggleGyroscope"
+                HorizontalOptions="Start"
+                />
+
+            <Label
+                x:Name="GyroscopeLabel"
+                Text="Disabled"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                />
+            
+            <Label
+                Text="Magnetometer"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                />
+
+            <Button
+                x:Name="MagnBtn"
+                Text="Toggle Magnetometer"
+                Clicked="ToggleMagnetometer"
+                HorizontalOptions="Start"
+                />
+
+            <Label
+                x:Name="MagnetometerLabel"
+                Text="Disabled"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                />
+
 
             <Label
                 Text="Hello, World!"
