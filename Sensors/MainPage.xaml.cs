@@ -126,4 +126,9 @@ public partial class MainPage : ContentPage
         OrientationLabel.Text = $"Orientation: {e.Reading}";
 
     }
+
+    private void OnSocketClicked(object sender, EventArgs e)
+    {
+        //await Navigation.PushAsync(new SocketPage());
+    }
 }

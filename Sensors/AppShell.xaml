@@ -6,9 +6,15 @@
     xmlns:local="clr-namespace:Sensors"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <TabBar>
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+        <ShellContent
+        Title="Socket"
+        ContentTemplate="{DataTemplate local:SocketPage}"
+        />
+    </TabBar>
 
 </Shell>

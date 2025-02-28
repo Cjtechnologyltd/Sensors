@@ -127,6 +127,13 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+            
+            <Button
+                x:Name="SocketBtn"
+                Text="Socket Setup"
+                SemanticProperties.Hint="Setup the socket client"
+                Clicked="OnSocketClicked"
+                HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </ScrollView>
