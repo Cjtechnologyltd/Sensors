@@ -24,7 +24,7 @@ public partial class SocketPage : ContentPage
 		}
 		catch (Exception ex)
 		{
-            Console.WriteLine($"Processing failed: {ex.Message}");
+            await DisplayAlert("Error", ex.Message, "OK");
         }
     }
 
